@@ -1,6 +1,6 @@
 from random import randint
-
 import os
+
 # 유저 생성
 class User:
     # 이용자 수 확인, 유저 회원번호
@@ -21,8 +21,8 @@ class User:
                 id = input("사용하실 ID를 입력해주세요. : ")
                 print(f"{id}님의 방문을 환영합니다. \n[{id}님의 회원번호는 {self.num}입니다.]")
                 break
-            except:
-                continue
+            except Exception as e:
+                print("오류 발생",e)
 
         self.id = id
         User.user_info[num] = id        
@@ -40,14 +40,14 @@ class User:
     
     
 
-# 게시판 클래스
-
+# 게시판
 class Post(User):
     post_num = 1
     posts =[]
     coment =[]
     num = 5
     login = False
+    
     def __init__(self,title =None,content=None):
         User.__init__(self)
         self.title = title
@@ -79,8 +79,6 @@ class Post(User):
                 continue
 
 
-
-
     def menu(self):
         self.check()
         os.system('cls')
@@ -94,14 +92,12 @@ class Post(User):
             print("_________________게시물_________________")
             self.view_post()
             print(f"________________(</{int(Post.num/5)}/>)_________________")
-            # 페이지 확인 기능 구현해야함.
             self.pic = input("명령 입력 : ")
 
             if self.pic in ['1','2','3','4','5']:
                 self.pic = int(self.pic)
             else:
                 pass
-
             if self.pic == 1:
                 os.system('cls')
                 self.make_post()
@@ -125,7 +121,6 @@ class Post(User):
                         continue
                     else:
                         # 댓글 삭제
-                        #[Post.coment.remove(item) for item in Post.coment if item['id'] == Post.posts[delnum]['id']]
                         self.del_coment(delnum)
                         # 게시글 삭제
                         del Post.posts[delnum]
@@ -146,30 +141,29 @@ class Post(User):
                 break
             except:
                 continue
-
+        num = 1
         stop = True
+        conten = []
         while stop:
             try:
                 print("내용을 입력하고 완료되면 'q'를 눌러주세요. ")
-                conten =[]
-                total = ''
                 while True:
+                    con_dic = {}
                     i = input()
                     if i.lower() in ['q']:
                         stop =False
-                        
                         break
                     else:
-                        i_n = i +'\n'
-                        conten.append(i_n)
-                for i in range(len(conten)):
-                    total = total + conten[i]
-                self.content = total
+                        con_dic['id'] = num
+                        con_dic['con'] = i
+                        con_dic['done']=False
+                        conten.append(con_dic)
+                        num +=1
                 os.system('cls')
-            except:
-                print("무언가 알수 없는 오류")
+            except Exception as e:
+                print("오류 발생",e)
                 continue                    
-        Post.posts.append({'id':Post.post_num,'title':self.title, 'content':self.content, 'user': self.unum})
+        Post.posts.append({'id':Post.post_num,'title':self.title, 'content':conten, 'user': self.unum})
         Post.post_num += 1
 
     #게시글 수정
@@ -199,26 +193,29 @@ class Post(User):
                 break
             except:
                 continue
-
+        conten = []
+        con_dic = {}
+        num = 1
         while stop:
             try:
                 print("내용을 입력하고 완료되면 'q'를 눌러주세요. ")
-                conten =[]
-                total = ''
+                
                 while True:
                     i = input()
                     if i.lower() in ['q']:
                         stop =False
                         break
                     else:
-                        i_n = i +'\n'
-                        conten.append(i_n)
-                for i in range(len(conten)):
-                    total = total + conten[i]
-                self.content = total
-            except:
-                print("무언가 알수 없는 오류")
+                        con_dic['id'] = num
+                        con_dic['con'] = i
+                        con_dic['done']=False
+                        conten.append(con_dic)
+                        self.coment = conten
+                        num +=1
+            except Exception as e:
+                print("오류 발생",e)
                 continue
+        self.content = conten
         if not(stop):
             Post.posts[fix_num]['title'] = self.title
             Post.posts[fix_num]['content'] = self.content
@@ -235,7 +232,12 @@ class Post(User):
                 print("게시물 조회합니다.\n")
                 while True:
                     if Post.posts[find_num]:
-                        print(f"제목 : {Post.posts[find_num]['title']} \n _______________내용_________________\n\n {Post.posts[find_num]['content']}")
+                        print(f"제목 : {Post.posts[find_num]['title']} \n _______________내용_________________ ")
+                        for item in Post.posts[find_num]['content']:
+                            if item['done'] is True:
+                               print(f"{item['id']}. {item['con']}\t\t[O]")
+                            else:
+                                print(f"{item['id']}. {item['con']}\t\t[X]")
                         if [coment_i['id'] for coment_i in Post.coment if coment_i['id'] == Post.posts[find_num]['id']]:
                             print('_____________________________________')
                             self.show_coment(i)
@@ -243,11 +245,13 @@ class Post(User):
                         print('다시 입력해주세요')
                         continue
                     print('_____________________________________')
-                    ask_re = input("댓글작성 \t종료[Y] \n >")
+                    ask_re = input("댓글작성 \t종료[Y] \t 완료[DO]\n >")
                     if ask_re.upper() in ['Y','ㅛ']:
                         print("-검색 종료-")
                         stop = False
                         break
+                    elif ask_re.upper() in ['DO']:
+                        self.ck_do(find_num)
                     else:
                         self.make_coment(i,ask_re)
             except ValueError:
@@ -293,8 +297,8 @@ class Post(User):
                 try:
                     coment = input("댓글을 입력해주세요 : ")
                     break
-                except:
-                    print("오류가 발생했습니다.")
+                except Exception as e:
+                    print("오류 발생",e)
                     continue
             else:
                 Post.coment.append({'id':pos_id, 'coment':coment, 'user': self.unum})
@@ -312,7 +316,25 @@ class Post(User):
     def del_coment(self, num):
         pos_id = Post.posts[num]['id']
         Post.coment = [item for item in Post.coment if item['id'] != pos_id]
+    
+    # 완료처리
+    def ck_do(self,num):
+        while True:
+            try:
+                do = int(input("완료한 일정의 번호를 입력해주세요\n>"))
+                for item in Post.posts[num]['content']:
+                    if item['id'] == do:
+                        item['done'] = True
+                ag = input("더 입력하시겠습니까?[Y/N]")
+                if ag.upper() in ['N']:
+                    break
+                else:
+                    continue
+            except Exception as e:
+                print("오류 발생",e)
 
+
+        
 
     def __del__(self):
         pass
@@ -322,3 +344,4 @@ class Post(User):
 
 a = Post()
 a.menu()
+
