@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 원래 있었던 자리 기준 */
+        #red{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        #yellow{
+            width: 400px;
+            height: 400px;
+            position:relative; 
+            top: 100px;
+            left: 100px;
+            background-color: yellow;
+        }
+        /*원래 있었던 자리 기준 (부모기준 =static,relative) */
+        #green{
+            width: 100px;
+            height: 100px;
+            position:relative; 
+            top: 0px;
+            left: 100px;
+            background-color: green;
+        }
+        #blue{
+            width: 100px;
+            height: 100px;
+            position:relative; 
+            top: 100px;
+            left: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="yellow">
+        <div id="green"></div>
+        <div id="blue"></div>
+    </div>
+</body>
+</html>

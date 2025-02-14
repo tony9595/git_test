@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #dddddd;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 10px solid  orange;
+        }
+        div:nth-child(1){
+            margin: 0;
+            border: 0;
+            padding: 0;
+            background-color: red;
+        }
+        /* 박스의 설정된 크기를 콘텐츠 영역+패딩+테두리를 포함하여 영역으로 만든다 */
+        div:nth-child(2){
+            background-color: green;
+            box-sizing: border-box;
+        }
+        /* 박스의 크기는 컨탠츠만 패딩과 테두리만큼 더 커진다 */
+        div:nth-child(3){
+            background-color: blue;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div>200*200</div>
+    <div>200*200</div>
+    <div>200*200</div>
+</body>
+</html>

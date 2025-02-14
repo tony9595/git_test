@@ -6,9 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="#" method="get">
-        이름 : <input type="text" name="uname" />
+    <form action="https://www.google.com" method="get">
+        이름 : <input type="text" name="uname" /> <br/>
+        아이디 : <input type="text" name="uid" /> <br/>
+        비밀번호 : <input type="password" name="upw" /> <br/>
+        연락처 : <input type="text" name="uphone1" size = "5"/>-
+                 <input type="text" name="uphone2" size = "5"/>-
+                 <input type="text" name="uphone3" size = "5"/> <br/>
+        사진 : <input type="file" name="uphoto" /> <br/>
+        성별 구분 : <input type="radio" name="gender" value="m"/>남,<input type="radio" name="gender" value="w"/>여 <br/>
+        언어 : <input type="checkbox" name="lang" value="KR"/>한국어,<input type="checkbox" name="lang" value="EG"/>영어,<input type="checkbox" name="lang" value="JN"/>일본어,<input type="checkbox" name="lang" value="CN"/>중국어<br/>
+        자기소개 : <textarea name="intro" cols="30" rows="5">간단하게 입력</textarea><br/>
+        국적 : <select>
+                <option value ="KOR">한국</option>
+                <option selected value="USA">미국</option>
+                <option value="JAPAN">일본</option>
+                <option value="mid">중국</option>
+            </select> <br/>
+        좋아하는 음식 : <select multiple = "multiple">
+            <option >김치</option>
+            <option >불고기</option>
+            <option >파전</option>
+            <option >비빔밥</option>
+        </select> <br/>
+        <input type="submit" value="전송" />
     </form>
-    
+
 </body>
 </html>

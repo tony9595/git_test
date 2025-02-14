@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #mainbox{
+            width: 100vw;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 20% 60% 20%; /* 각 행(세로줄)의 길이 */
+            grid-template-rows: 20% 60% 20%; /* 각 열(가로줄)의 길이 */
+            gap: 0.5px; /* 자식요소간의 간격 */
+            grid-template-rows: repeat(3, minmax(100px, auto));
+        }
+        #menu{
+            text-align: center;
+            font-size: 1vh;
+        }
+        .inmenu{
+            padding: 10px;
+            font-weight: bold;
+        }
+        .sidbox{
+            border: 1px solid gray;
+            width: 20vw ;
+            height: 20vh;
+        }
+        .sidmbox{
+            border: 1px solid gray;
+            width: 60vw ;
+            height: 20vh;
+        }
+        .msid{
+            border: 1px solid gray;
+            width: 20vw ;
+            height: 60vh;
+        }
+        #main{
+            border: 1px solid gray;
+            width: 60vw ;
+            height: 60vh;
+            border-radius: 10px;
+        }
+        #tboxl{
+            border-bottom-right-radius: 10px;
+        }
+        #tboxm{
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #tboxr{
+            border-bottom-left-radius: 10px;
+        }
+        #mboxl{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        #mboxr{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #bboxl{
+            border-top-right-radius: 10px;
+        }
+        #bboxm{
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        #bboxr{
+            border-top-left-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainbox">
+        <div class="sidbox" id="tboxl"></div>
+        <div class="sidmbox"id="tboxm"></div>
+        <div class="sidbox"id="tboxr"></div>
+        <div class="msid"id="mboxl"></div>
+        <div id="main">
+            <div id="menu"><p><span class="inmenu">menu1</span><span class="inmenu">menu2</span><span class="inmenu">menu3</span><span class="inmenu">menu4</span></p></div>
+            <div><h1>하이서울브랜드</h1></div>
+            <div>어쩌고저쩌고 서울이랑 어디랑 공동으로 어쩌구 해서 경제적 창출을 하고 뭐 고도화 하고 중소기업도 살리고 다 했습니다. 저희 서장님 남천동 삽니다.</div>
+        </div>
+        <div class="msid"id="mboxr"></div>
+        <div class="sidbox"id="bboxl"></div>
+        <div class="sidmbox"id="bboxm"></div>
+        <div class="sidbox"id="bboxr"></div>
+    </div>
+</body>
+</html>

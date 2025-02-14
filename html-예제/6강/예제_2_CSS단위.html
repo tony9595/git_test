@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: auto;
+            font-size: 32px;
+        }
+        div{
+            /* 부모값의 2배 */
+            font-size: 2em;
+        }
+        #hello{
+            /* root(최고조상) em */
+            font-size: 2rem;
+        }
+        .parent{
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(201,179,125);
+        }
+        .child{
+            height: 50%;
+            width: 60%;
+            background-color: rgb(92,170,206);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <div>안녕하세요</div>
+    <div id="hello">안녕하세요</div> -->
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>
