@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        let num = 100;
+
+        if (num > 50){
+            document.write('50보다 큽니다.');
+        }
+
+
+        if (num < 50){
+            document.write('50보다 작습니다.');
+        } else {
+            document.write('50 이상 입니다.');
+        }
+
+        if (num > 200){
+            document.write('200보다 큽니다,');
+        } else if(num > 150){
+            document.write('150보다 큽니다.');
+        } else {
+            document.write('150보다 작습니다.');
+        }
+
+        // 세개의 과목을 입력 받아
+        let kor = prompt('국어 점수를 입력하세요');
+        let eng = prompt('영어 점수를 입력하세요');
+        let math = prompt('수학 점수를 입력하세요');
+
+        // 형변환
+        let avg = (parseInt(kor)+parseFloat(eng)+Number(math))/3;
+        document.write(`평균은 ${String(avg)}점 입니다.<br>`);
+
+        if (avg >= 90){
+            document.write('수');
+        } else if(avg >= 80){
+            document.write('우');
+        } else if(avg >= 70){
+            document.write('미');
+        } else if(avg >= 60){
+            document.write('양');
+        } else {
+            document.write('가')
+        }
+        
+        // 스위치문
+
+        let month = Number(prompt("달을 입력해주세요"));
+
+
+        // 걸리면 브레이크 까지
+        switch(month) {
+                case 12:
+                case 1:
+                case 2:
+                    document.write('겨울입니다.');
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    document.write('봄입니다.');
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    document.write('여름입니다.');
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    document.write('가을입니다.');
+                    break;
+                default:
+                    document.write('잘못된 입력입니다.');
+            }
+
+            //삼항연산자
+            let a = 10;
+            let b = 20;
+
+            if (a>b){
+                document.write("True");
+            } else {
+                document.write('False');
+            }
+            // 삼항연산자
+            // 조건 ? 참일때 : 거짓일때
+
+            const result = (a > b) ? 'True' : 'False' ;
+            document.write(result);
+
+            let age = prompt("나이를 입력하세요");
+            const adult = (age >= 20) ? "성인" : "미성년자";
+            document.write(adult)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

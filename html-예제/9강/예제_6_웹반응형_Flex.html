@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+          display: flex;
+          /* 주축 설정 row= 가로 column= 세로*/
+
+          /* reverse = 반대로 */
+          flex-direction: row;
+
+          /* 줄바꿈을 해줌 */
+          /* flex-wrap: wrap-reverse; */
+
+          /* 간격처리 */
+          /* justify-content: space-evenly; */
+
+          height: 200px;
+
+          /* 교차축 포지션 설정 */
+          /* align-items: flex-end; 기본값은 stretch */
+          background-color: DodgerBlue;
+        }
+        
+        .flex-container > div {
+          background-color: #f1f1f1;
+          width: 100px;
+          margin: 10px;
+          padding: 20px;
+          font-size: 30px;
+        }
+        </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+</body>
+</html>
