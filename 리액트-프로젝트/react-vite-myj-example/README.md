@@ -14,3 +14,10 @@
     "jsxSingleQuote": true,
     "semi": false 
 }
+
+#### 3. 기본 실행순서
+app.jsx -> main.jsx -> index.html
+
+#### 4.Hello world 찍어 보기
+
+- 첫번째 컴포넌트 작성해보기
