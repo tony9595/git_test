@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    setInterval(function () {
+      let timer = new Date();
+      let h = timer.getHours();
+      let m = timer.getMinutes();
+      let s = timer.getSeconds();
+
+      //document.write(h + '시' + m + '분' + s + '초' + '<br>');
+      document.getElementById('clock').innerHTML =
+        h + '시' + m + '분' + s + '초';
+    }, 1000);
+  </script>
+</head>
+
+<body>
+  <h1 id="clock"></h1>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+
+  </style>
+  <script>
+
+    $(function () {
+      $('p').each(function (index, item) {
+        console.log(index + ' : ' + $(item).text());
+        console.log(index + ' : ' + $(this).text());
+
+        if (index % 2 == 0) {
+          $(this).css('background', 'yellow');
+        } else {
+          $(item).css('background', 'green');
+        }
+      })
+
+      //html() / text() 메서드
+      console.log($('#htmlMethod').html());
+      console.log($('#textMethod').text());
+
+      $('#htmlMethod').html(
+        '<strong>new</strong> ' + 'html() 메서드'
+      );
+
+      $('#textMethod').text('안녕하세요');
+
+      //addClass() 속성 추가
+      $('#addClass').addClass('addCla');
+      $('.addCla').css('background', '#ff0000');
+
+      //attr() 속성 추가
+      $('#attrMethod img').attr('src', 'img/logo.png');
+      //$('#attrMethod img').removeAttr('src');
+      console.log($('#attrMethod img').attr('src'));
+
+      //remove() 문서 객체 제거
+      //empty() 문서 내용 제거
+
+      $('#removeMthod').remove()
+      $('#emptyMthod').remove()
+      
+      //value 값 가져오기
+      console.log($('#melon').val('안녕'));
+      console.log((document.querySelector('#melon').value='메롱'));
+    });
+
+
+  </script>
+</head>
+
+<body>
+  <input id="melon" type="text" value="abc"/>
+  <p> Hello javascript! </p>
+  <p> Hello jQuery! </p>
+  <p> Hello node.js! </p>
+
+  <div id="htmlMethod"> html() 메서드 </div>
+  <div id="textMethod"> text() 메서드 </div>
+
+  <div id="addClass"> addClass() 메서드 </div>
+
+  <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+  <hr>
+  <div id="attrMethod">
+    <img>
+    <br>
+    <img>
+  </div>
+
+  <div id="cssMethod"> CSS METHOD </div>
+
+  <div id="removeMthod"> Remove Object! </div>
+  <div id="emptyMthod"> Empty Object! </div>
+</body>
+
+</html>

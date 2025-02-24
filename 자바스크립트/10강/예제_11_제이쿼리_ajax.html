@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+
+  </style>
+  <script>
+    //ajax = 비동기 통신 함수 = jquery에서 제공하는 함수
+    // xml vs json
+
+    // $.ajax({
+    //     type : http method type,
+    //     url : url,
+    //     data : 서버에 전송할 데이터,
+    //     contentType : "전송할 데이터 타입",
+    //     //기본 값 : "application / x-www-form-urlencoded; charset = UTF-8"
+    //     dataType : '서버로 부터 수신할 데이터 타입',
+    //     //아무것도 지정하지 않으면 jQuery는 응답의 MIME 유형을 기반으로 해석을 시도
+    //     error : 에러 발생시 수행할 함수,
+    //     success : 성공시 수행할 함수
+    // });
+    $(document).ready(function () {
+
+      $.ajax({
+        type: 'GET',
+        url: 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json',
+        success: function (respose) {
+          console.log(respose);
+          console.log(respose.homeTown);
+          console.log(respose.formed);
+
+          $(respose.members).each(function (index, item) {
+            $('#member').append(
+              '<tr>' +
+                '<td>' + item.name + '</td>' +
+                '<td>' + item.age + '</td>' +
+                '<td>' + item.secretIdentity + '</td>' +
+                '<td>' + item.powers[0] + '</td>' +
+              '</tr>'
+            );
+          })
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+
+      console.log('안녕하세요');
+
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <table id="member" border="1">
+    <tr>
+      <th>이름</th>
+      <th>나이</th>
+      <th>비밀</th>
+      <th>능력</th>
+    </tr>
+  </table>
+</body>
+
+</html>

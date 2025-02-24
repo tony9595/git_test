@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+
+  </style>
+  <script>
+
+    $(function () {
+      function eventHandler(){
+        console.log('클릭 이벤트가 발생했습니다');
+        console.log(this)
+      }
+
+      $('#objDiv').click(eventHandler);
+      $('#objP').click(eventHandler);
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="objDiv">안녕하세요</div>
+  <p id="objP"> p Tag</p>
+</body>
+
+</html>

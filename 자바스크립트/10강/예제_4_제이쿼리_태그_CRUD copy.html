@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script>
+    // $(document).ready(function () {
+    //   let wrap = $('#wrap');
+
+    //   //태그 생성
+
+    //   let divObj = $('<div>안녕 제이쿼리!!</div>');
+    //   divObj.appendTo(wrap);
+    //   divObj.css('background','green');
+
+    //   $('<div>안녕 제이쿼리!!</div>')
+    //     .appendTo(wrap)
+    //     .css('background', 'yellow');
+
+    //   let imgObj = $('<img src="img/logo.png" />');
+    //   imgObj.appendTo(wrap);
+
+    // });
+
+    $(function(){
+      let wrap = $('#wrap');
+      /* 객체 생성 */
+      let divObj = $('<div>안녕 제이쿼리!!</div>');
+
+      /* 객체 집어 넣기 */
+      //divObj.appendTo(wrap);
+
+      /*부모객체 자식 집어 넣기*/
+      wrap.append(divObj);
+
+      // 첫번째 자식으로 집어 넣기
+      wrap.prepend('<div>안녕하세요</div>')
+      $('<div>안녕하세요!!</div>').prependTo(wrap);
+
+      // 막내로 들어가기
+      $('<div>막내로 들어가겠다.</div>').insertAfter(wrap);
+      wrap.after('<div>막내로 들어가겠다!!</div>')
+
+    });
+
+
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    <div>content</div>
+  </div>
+</body>
+
+</html>

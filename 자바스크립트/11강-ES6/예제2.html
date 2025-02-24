@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 스프레드 구문 ... = 배열이나 객체에 이용
+        const arr1 = [1, 2];
+        console.log(arr1);
+        console.log(...arr1); // 요소 전개
+
+        const fun1 = (val1, val2) => val1 + val2;
+
+        console.log(fun1(arr1[1], arr1[0]));
+        console.log(fun1(...arr1));
+
+        // 요소 모으기
+        const arr = [1, 2, 3, 4, 5];
+        const [num1, num2, ...left] = arr;
+
+        console.log(num1); //1
+        console.log(num2); //2
+        console.log(left); //3,4,5
+        console.log(arr); //1,2,3,4,5
+
+        // 요소 복사와 결합
+        const arrA = [1, 2, 3, 4]
+        const arrB = [5, 6, 7, 8]
+
+        const arrAB = [...arrA, ...arrB]
+        console.log(arrAB) // [1, 2, 3, 4, 5, 6, 7, 8]
+
+        const arrApB = arrA + arrB
+        console.log(arrApB) // 1,2,3,45,6,7,8
+        console.log(arrApB[0]) // 1
+        console.log(arrApB[1]) // ,
+        console.log(arrApB[2]) // 2
+        console.log(arrApB[3]) // ,
+
+        //객체 에서의 스프레드 연산자
+        const obj1 = {
+            val1: 10,
+            val2: 20,
+        };
+        const obj2 = {
+            val3: 30,
+            val4: 40,
+        };
+        const obj11 = { ...obj1 }; // 객체 복사
+        console.log(obj11); // { val1: 10, val2: 20 }
+
+
+        obj1obj2 = { ...obj1, ...obj2 };
+        console.log(obj1obj2); //{ val1: 10, val2: 20, val3: 30, val4: 40 }
+
+        // 왜 스프레드 연산자로 복사를 할까.
+        let obj = {
+            val1: 10,
+            val2: 20,
+        };
+
+        let scopyObj = {...obj};
+        scopyObj.val2 = 40;
+        let copyObj = obj; //참조 복사
+        copyObj.val1 = 100;
+
+        console.log(obj); 
+        console.log(copyObj);
+        console.log(scopyObj);
+
+        // 연산자 &&, ||, ==, ===
+        // 값이 true 일경우
+        // or은 앞의 데이터를, and는 뒤의 데이터를 가지게 된다.
+
+
+        let a = false;
+        let b = null;
+        let c = 'apple';
+        let d = a||b;
+        console.log(d);
+        d= c||d;
+        console.log(d);
+        d = a&&b
+        console.log(d);
+
+        // ==, ===
+
+        // == 값을 비교
+        if (100=='100'){
+            document.write('참<br>');
+        } else{
+            document.write('거짓<br>');
+        }
+
+        // === 값과 타입까지 비교
+        if (100==='100'){
+            document.write('참<br>');
+        } else{
+            document.write('거짓<br>');
+        }
+        
+        // import export 문법 / 모듈
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        /*
+          내장함수
+        */
+       /*
+       alert('hello world');
+       prompt('이름을 입력하세요');
+       confirm('정말 삭제하겠습니까?');
+       document.write('<h1>hello world</h1>');
+       console.log('hello world');
+       */
+
+       //시간 관련 함수
+       let callback = function(){
+        alert('1초 후에 실행됨');
+       }
+
+       //setTimeout(callback, 3000);
+
+    //    setTimeout(function(){
+    //     alert('1초 후에 실행됨');
+    //    }, 3000)
+       i = 1;
+       let intervalId = setInterval(() => {
+        document.write('1초 마다 실행됨'+i+'<br>')
+        i++;
+       }, 1000);
+
+       //clearInterval(intervalId);
+       callback = function(){
+        clearInterval(intervalId);
+        document.write('종료');
+       }
+       let timeout = setTimeout(callback, 1000 *10);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

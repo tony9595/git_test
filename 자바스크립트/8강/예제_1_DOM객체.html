@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let tag = document.createElement('p');
+            let text = document.createTextNode('Hello world');
+
+            tag.appendChild(text);
+            document.body.appendChild(tag);
+            /* 속성 처리 */
+            document.write('<hr>');
+
+            let imgTag = document.createElement('img');
+            // imgTag.src = 'img/logo.png';
+            // imgTag.width = '200';
+            // imgTag.height = '200';
+            imgTag.setAttribute('src', 'img/logo.png');
+            imgTag.setAttribute('width', '200');
+            imgTag.setAttribute('height', '200');
+            document.body.appendChild(imgTag);
+
+            /* innerHTML */
+            let str = '';
+            str += '<h1>안녕하세요</h1>'
+            str += " <img src='./img/logo.png', ";
+            str += " width='170', height='67', tempData='logoImg'> ";
+
+            document.body.innerHTML = str;
+            document.body.innerHTML = '<p id="hello">안녕하세요</p> <p class="hello2">안녕하세요</p>';
+
+            /*
+            선택자 : # id, class
+            */
+            let pTag = document.getElementById('hello');
+            console.log(pTag);
+            pTag.style.color ='red';
+            pTag.style.fontSize ='30px';
+            pTag.innerHTML = '홍길동 입니다.';
+
+            let pTag2 = document.getElementsByClassName('hello2');
+            console.log(pTag2);
+            pTag2[0].style.color ='blue';
+            pTag2[0].style.fontSize ='30px';
+            pTag2[0].innerHTML ='홍길동 입니다.';
+
+            /*
+                쿼리 셀렉터
+            */
+            let selectde = document.querySelector('#hello');
+            console.log(selectde);
+            selectde.style.color ='red';
+            selectde.style.fontSize ='30px';
+            selectde.innerHTML = '홍길동 입니다.';
+
+            selectde = document.querySelector('.hello2');
+            console.log(selectde);
+
+            /*
+                객체(태그) 삭제
+            */
+
+            let tag1 = "";
+            tag1 += "<p id='jsTitle'> javascript & node.js </p>";
+            tag1 += "<img id='logoImg', src='./img/logo.png',";
+            tag1 += "width='170', height='67', tempData='logoImg'>";
+
+            document.body.innerHTML = tag1;
+            let jsTitle = document.querySelector('#jsTitle');
+            //jsTitle.parentNode.removeChild(jsTitle);
+            jsTitle.remove();
+
+            let logoImg = document.querySelector('#logoImg');
+            //logoImg.parentNode.removeChild(logoImg);
+            logoImg.remove();
+
+
+        };
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+<!-- <script>
+    let tag = document.createElement('p'); // p태그 생성
+    let text = document.createTextNode('Hello world'); // 텍스트 생성
+
+    tag.appendChild(text); // p태그안에 텍스트 
+    document.body.appendChild(tag); // 바디태그 안에 p태그
+</script> -->
+
+</html>

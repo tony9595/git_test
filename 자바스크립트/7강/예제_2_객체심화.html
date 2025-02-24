@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수를 이용한 객체 생성
+        function createCar(name, color, speed) {
+            let car = {
+                name: name,
+                color: color,
+                speed: 100,
+                run: function (power) {
+                    return this.speed * power;
+                },
+            };
+            return car;
+        }
+
+        let sonata = createCar('sonata', 'black', 100);
+        console.log(sonata);
+
+        let date = new Date();
+        console.log(date);
+
+        /*
+            생성자 함수 : 객체를 생성하는 함수
+            1. 함수 이름은 대문자로 시작
+            2. 반드시 new 키워드를 이용해서 객체 생성
+
+            주의)  -함수 앞에 new 키워드를 사용하면 객체를 생성함
+                   - this => 호출한 객체
+         */
+        function Airplane(name, color, speed) {
+
+            // this.프라퍼티(변수명)를 통하여 프라퍼티를 동적생성하고 있음.
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+            this.fly = function () {
+                return this.speed + 'fly!';
+            };
+        }
+
+        let boeing747 = new Airplane('boeing747', 'white', 1000);
+        console.log(boeing747);
+        console.log(typeof boeing747);
+        document.write(boeing747.name + '<br>');
+        document.write(boeing747.color + '<br>');
+        document.write(boeing747.speed + '<br>');
+        document.write(boeing747.fly() + '<br>');
+
+
+
+
+        function Grade(name, x, y, z) {
+            this.name = name;
+            this.kor = x;
+            this.eng = y;
+            this.math = z;
+
+            this.total = function () {
+                return this.kor + this.eng + this.math;
+            }
+            this.avg = function () {
+                return this.total() / 3;
+            }
+        }
+
+        let hong = new Grade('이름', 100, 90, 80)
+        document.write(hong.name + '<br>');
+        document.write(hong.total() + '<br>');
+        document.write(hong.avg() + '<br>');
+
+        /*
+            자바스크립트
+            변수명, 함수명 => camel case
+            생성자 함수는 대문자로 시작
+        */
+
+        class Car {
+            constructor(name, color, speed) {
+                this.name = name;
+                this.color = color;
+                this.speed = speed;
+            }
+
+            run() {
+                return this.speed + 'km/h';
+            }
+        }
+
+        sonata = new Car('sonata', 'white', 100);
+        console.log(sonata);
+
+
+        // 프로토타입
+
+        function GradeExample(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            this.total = function () {
+                return this.kor + this.eng + this.math;
+            };
+            this.avg = function () {
+                return this.total() / 3;
+            };
+        }
+
+        let chulsuu = new GradeExample('철수',10,90,80);
+        console.log(chulsuu);
+
+        function GradeProto(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        };
+
+        // 프로토타입 객체에 메서드 상속
+        
+        GradeProto.prototype.total = function() {
+                return this.kor + this.eng + this.math;
+            };
+        GradeProto.prototype.avg = function () {
+                return this.total() / 3;
+            };
+        
+        let Yunghee = new GradeProto('영희',90,90,80);
+        console.log(Yunghee);
+        console.log(Yunghee.total());
+        console.log(Yunghee.avg());
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

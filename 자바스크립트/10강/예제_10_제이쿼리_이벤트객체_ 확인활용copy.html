@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+
+  </style>
+  <script>
+
+    $(function () {
+
+      $('#name').on('click', function (event) {
+
+        console.log('click 이벤트 발생');
+        console.log(event.target.name);
+        console.log(event.target.value);
+      });
+
+      $('a').on('click', function (event) {
+
+        event.preventDefault(); //a 태그 기능을 막음
+        console.log('a태그 클릭 이벤트 발생');
+        console.log(event.target.href);
+      });
+
+    });
+
+
+
+  </script>
+
+</head>
+
+<body>
+  <div>
+    <input type="text" name="name" id="name" value="홍길동" />
+  </div>
+  <div>
+    <a href="http://www.google.co.kr">구글</a>
+  </div>
+</body>
+
+</html>

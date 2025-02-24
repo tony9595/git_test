@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+    #eDiv {
+      width: 100px;
+      height: 100px;
+      background: #ff0000;
+      line-height: 100px;
+      text-align: center;
+      color: #ffffff;
+      font-weight: bolder;
+      margin: 20px;
+    }
+  </style>
+  <script>
+
+    $(function () {
+      $('#firstButton').click(function () {
+        let bodyHtml =
+          "<button id='secondButton'>두 번째 버튼</button>";
+        $('#mainDiv').append(bodyHtml);
+
+      });
+      // $('#secondButton').click(function () {
+      //   alert('두 번째 버튼을 클릭 하셨습니다');
+      // });
+      $(document).on('click','#secondButton',function(){
+        alert('두 번째 버튼을 클릭 하셨습니다');
+      });
+    });
+
+
+
+  </script>
+
+</head>
+
+<body>
+  <div>
+    <div id="mainDiv">
+      <button id="firstButton">첫 번째 버튼</button>
+    </div>
+  </div>
+</body>
+
+</html>

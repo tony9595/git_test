@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function btnUp() {
+            document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;
+        }
+
+        function btnDown() {
+    
+            if (parseInt(document.getElementById('quantity').value) < 1) {
+                alert('0보다 작음');
+            } 
+            else {
+                document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) - 1;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    갯수<input type="text" name="quantity" id="quantity" value="1" />
+        <button onclick = 'btnUp()'>+</button>
+        <button onclick = 'btnDown()'>-</button>
+</body>
+</html>

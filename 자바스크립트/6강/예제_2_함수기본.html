@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수 실행 순서
+
+        fun1();        //정상 실행
+        //fun2();        //오류 발생
+
+        // 명시(선언)적 함수 생성
+        function fun1() {
+            console.log("fun1 run!");
+        }
+
+        // 익명 함수 생성
+        var fun2 = function () {
+            console.log("fun2 run!");
+        }
+
+        fun2();        //정상 실행
+
+
+        let avg = function () {
+            let sum = 0;
+            let total = 0;
+            for (i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+                total += i;
+            }
+            let sc = sum / total;
+            let g= '';
+            if (sc >= 90) {
+                g=('수');
+            } else if (sc >= 80) {
+                g=('우');
+            } else if (sc >= 70) {
+                g=('미');
+            } else if (sc >= 60) {
+                g=('양');
+            } else {
+                g=('가');
+            }
+            return `평균점수 : ${sc} <br>성적 : ${g}`;
+        }
+
+        let grade = function(sc){
+            let a = '';
+            if (sc >= 90) {
+                a =('수<br>');
+            } else if (sc >= 80) {
+                a=('우<br>');
+            } else if (sc >= 70) {
+                a= ('미<br>');
+            } else if (sc >= 60) {
+                a= ('양<br>');
+            } else {
+                a= ('가<br>');
+            }
+            return a;
+        }
+        document.write(avg(90, 60, 60));
+        document.write('<hr>')
+        
+        /* 화살표 함수의 특징
+            익명함수 형태로 만듦 (명시적 함수로는 불가)
+            arguments 없음
+            this의 용도 다름.
+         */
+        let mulFunc = (num) => {
+            return num * 2;
+        }
+        let mulself = (num) => num *num;
+
+        document.write(mulFunc(2)+'<br>');
+        document.write(mulself(3)+'<br>');
+        document.write('<hr>')
+
+        function gugudan1(num){
+            for (i=1;i<=9;i++){
+                document.write(`${num}X${i}=${i*num}<br>`)
+            }
+        }
+
+        let gugudan2 = function(num){
+            for (i=1;i<=9;i++){
+                document.write(`${num}X${i}=${i*num}<br>`)
+            }
+        }
+        let gugudan3 = (num) => {
+            for (i=1;i<=9;i++){
+                document.write(`${num}X${i}=${i*num}<br>`)
+            }
+        }
+
+        gugudan1(2) // 명시적 함수
+        gugudan2(3) // 익명 함수
+        gugudan3(4) // 화살표 함수
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

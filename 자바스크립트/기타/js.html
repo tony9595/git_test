@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="alert-box">
+        <p>Alert 박스</p> 
+        <button onclick="close_box()">닫기</button>
+    </div>
+    <button onclick="open_box()">열기</button>
+
+    <script>
+        function open_box() {
+            document.getElementsByClassName('alert-box')[0].style.display ='block';
+        }
+        function close_box() {
+            document.getElementsByClassName('alert-box')[0].style.display ='none';
+        }
+    </script>
+</body>
+</html>
