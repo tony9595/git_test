@@ -1,6 +1,7 @@
 import BoardPage from "../pages/BoardPage"
 import BootStrapPage from "../pages/BootStrapPage"
 import ConditionalPage from "../pages/ConditionalPage"
+import CounterPage from "../pages/CounterPage"
 import HelloPage from "../pages/HelloPage"
 import HomePage from "../pages/HomePage"
 import JSXPage from "../pages/JSXPage"
@@ -49,6 +50,11 @@ const Routes = [
     path:'/props',
     element:<PropsPage/>,
     title:'프롭스',
+  },
+  {
+    path:'/usestate',
+    element:<CounterPage/>,
+    title:'usestate',
   },
 ]
 export default Routes
