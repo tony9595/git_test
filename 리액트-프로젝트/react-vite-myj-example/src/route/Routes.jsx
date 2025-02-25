@@ -1,6 +1,8 @@
 import BoardPage from "../pages/BoardPage"
+import ConditionalPage from "../pages/ConditionalPage"
 import HelloPage from "../pages/HelloPage"
 import HomePage from "../pages/HomePage"
+import JSXPage from "../pages/JSXPage"
 import ProfilePage from "../pages/ProfilePage"
 
 
@@ -25,6 +27,16 @@ const Routes = [
     path:'/hello',
     element:<HelloPage/>,
     title:'hello',
+  },
+  {
+    path:'/Jsx',
+    element:<JSXPage/>,
+    title:'Jsx문법',
+  },
+  {
+    path:'/conditional',
+    element:<ConditionalPage/>,
+    title:'조건부렌더링',
   },
 ]
 export default Routes
