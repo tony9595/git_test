@@ -7,6 +7,7 @@ import HomePage from "../pages/HomePage"
 import JSXPage from "../pages/JSXPage"
 import ProfilePage from "../pages/ProfilePage"
 import PropsPage from "../pages/PropsPage"
+import UseEffectPage from "../pages/UseEffectPage"
 
 
 // React Routes, Route 사용시 배열로 관리하기
@@ -55,6 +56,11 @@ const Routes = [
     path:'/usestate',
     element:<CounterPage/>,
     title:'usestate',
+  },
+  {
+    path:'/useEffect',
+    element:<UseEffectPage/>,
+    title:'useEffect',
   },
 ]
 export default Routes
