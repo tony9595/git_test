@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Hello = () => {
+// const Hello = (props) => {
+// 객체 구조분해로 자료형을 받아온다.
+const Hello = ({name,age,color}) => {
   return (
-    <div>안녕하세요</div>
+     //prettier-ignore
+  <div style={{color:color}}>
+    안녕하세요{name}<br/>
+    색상:{color}<br/>
+    나이:{age}<br/>
+  </div>
   )
 }
 
