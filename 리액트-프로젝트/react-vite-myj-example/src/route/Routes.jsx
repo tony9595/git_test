@@ -1,4 +1,5 @@
 import BoardPage from "../pages/BoardPage"
+import BootStrapPage from "../pages/BootStrapPage"
 import ConditionalPage from "../pages/ConditionalPage"
 import HelloPage from "../pages/HelloPage"
 import HomePage from "../pages/HomePage"
@@ -37,6 +38,11 @@ const Routes = [
     path:'/conditional',
     element:<ConditionalPage/>,
     title:'조건부렌더링',
+  },
+  {
+    path:'/bootstrap',
+    element:<BootStrapPage/>,
+    title:'부트스트랩',
   },
 ]
 export default Routes
