@@ -8,6 +8,8 @@ import JSXPage from "../pages/JSXPage"
 import ProfilePage from "../pages/ProfilePage"
 import PropsPage from "../pages/PropsPage"
 import UseEffectPage from "../pages/UseEffectPage"
+import UseRef1Page from "../pages/UseRef1Page"
+import UseRef2Page from "../pages/UseRef2Page"
 
 
 // React Routes, Route 사용시 배열로 관리하기
@@ -61,6 +63,16 @@ const Routes = [
     path:'/useEffect',
     element:<UseEffectPage/>,
     title:'useEffect',
+  },
+  {
+    path:'/useref',
+    element:<UseRef1Page/>,
+    title:'useref-1',
+  },
+  {
+    path:'/useref2',
+    element:<UseRef2Page/>,
+    title:'useref-2',
   },
 ]
 export default Routes
