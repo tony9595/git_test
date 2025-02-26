@@ -1,3 +1,5 @@
+import AxiosClient from "../pages/AxiosClient"
+import AxiosGetPage from "../pages/AxiosGetPage"
 import BoardPage from "../pages/BoardPage"
 import BootStrapPage from "../pages/BootStrapPage"
 import ConditionalPage from "../pages/ConditionalPage"
@@ -73,6 +75,16 @@ const Routes = [
     path:'/useref2',
     element:<UseRef2Page/>,
     title:'useref-2',
+  },
+  {
+    path:'/axiosget',
+    element:<AxiosGetPage/>,
+    title:'axios-get',
+  },
+  {
+    path:'/axiosclient',
+    element:<AxiosClient/>,
+    title:'axios-Client',
   },
 ]
 export default Routes
