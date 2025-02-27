@@ -4,10 +4,12 @@ import BoardPage from "../pages/BoardPage"
 import BootStrapPage from "../pages/BootStrapPage"
 import ConditionalPage from "../pages/ConditionalPage"
 import CounterPage from "../pages/CounterPage"
+import GradeinputPage2 from "../pages/Gradeinput2Page"
+import GradeinputPage from "../pages/GradeinputPage"
 import HelloPage from "../pages/HelloPage"
 import HomePage from "../pages/HomePage"
+import InputPage from "../pages/InputPage"
 import JSXPage from "../pages/JSXPage"
-import LPage from "../pages/lPage"
 import ProfilePage from "../pages/ProfilePage"
 import PropsPage from "../pages/PropsPage"
 import UseEffectPage from "../pages/UseEffectPage"
@@ -86,6 +88,20 @@ const Routes = [
     path:'/axiosclient',
     element:<AxiosClient/>,
     title:'axios-Client',
+  },
+  {
+    path:'/input',
+    element:<InputPage/>,
+    title:'input',
+  },
+  {
+    path:'/grade',
+    element:<GradeinputPage/>,
+    title:'평균',
+  },  {
+    path:'/grade2',
+    element:<GradeinputPage2/>,
+    title:'평균2',
   },
 ]
 export default Routes
