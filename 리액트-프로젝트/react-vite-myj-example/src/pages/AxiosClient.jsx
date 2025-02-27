@@ -28,10 +28,6 @@ const AxiosClient = () => {
 
   const removeClick = (event)=>{
     let no = event.target.name
-    console.log(event)
-    console.log(no)
-    console.log(event.target.value)
-
     setContacts(contacts.filter((contact) => contact.no != no))
   }
 
@@ -50,8 +46,7 @@ const AxiosClient = () => {
             <td>사진</td>
             <td>삭제</td>
           </tr>
-          {contacts &&
-            contacts.map((contact, index) => (
+          {contacts &&contacts.map((contact, index) => (
               <tr key={index}>
                 <td>{contact.no}</td>
                 <td>{contact.name}</td>
