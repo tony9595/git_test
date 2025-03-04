@@ -1,9 +1,16 @@
+import { CounterProvider } from "../context/CounterContext"
 import AxiosClient from "../pages/AxiosClient"
 import AxiosGetPage from "../pages/AxiosGetPage"
 import BoardPage from "../pages/BoardPage"
 import BootStrapPage from "../pages/BootStrapPage"
 import ConditionalPage from "../pages/ConditionalPage"
+import ContextNotUsePage from "../pages/ContextNotUsePage"
+import ContextUsedPage from "../pages/ContextUsedPage"
+import CounterContextPage from "../pages/CounterContextPage"
 import CounterPage from "../pages/CounterPage"
+import ClassNameUsePage from "../pages/cssPage/ClassNameUsePage"
+import InlineStylePage from "../pages/cssPage/InlineStylePage"
+import StyledComponentPage from "../pages/cssPage/StyledComponentPage"
 import GradeinputPage2 from "../pages/Gradeinput2Page"
 import GradeinputPage from "../pages/GradeinputPage"
 import HelloPage from "../pages/HelloPage"
@@ -97,11 +104,45 @@ const Routes = [
   {
     path:'/grade',
     element:<GradeinputPage/>,
-    title:'평균',
-  },  {
+    title:'성적-input',
+  },  
+  {
     path:'/grade2',
     element:<GradeinputPage2/>,
-    title:'평균2',
+    title:'성적-input(다중입력)',
+  },
+  {
+    path:'/styled-css',
+    element:<InlineStylePage/>,
+    title:'인라인스타일',
+  },
+  {
+    path:'/use-css',
+    element:<ClassNameUsePage/>,
+    title:'css파일적용',
+  },
+  {
+    path:'/styled',
+    element:<StyledComponentPage/>,
+    title:'styled-components',
+  },
+  {
+    path:'/contextnotuse',
+    element:<ContextNotUsePage/>,
+    title:'컨택스트API-사용안함',
+  },
+  {
+    path:'/contextused',
+    element:<ContextUsedPage/>,
+    title:'컨택스트API-사용',
+  },
+  {
+    path:'/count_context',
+    element:
+    (<CounterProvider>
+    <CounterContextPage/>
+    </CounterProvider>),
+    title:'컨택스트API-카운터',
   },
 ]
 export default Routes
